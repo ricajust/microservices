@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using StudentService.DTOs;
-using StudentService.Models;
 
 namespace StudentService.Services
 {
@@ -8,7 +9,7 @@ namespace StudentService.Services
 	{
 		Task<IEnumerable<StudentDTO>> GetAllAsync();
 		Task<StudentDTO> GetByIdAsync(Guid id);
-		Task AddAsync(Student studentDto);
+		Task AddAsync(StudentDTO studentDto);
 		Task UpdateAsync(StudentDTO studentDto);
 		Task DeleteAsync(Guid id);
 	}

@@ -6,7 +6,7 @@ namespace StudentService.Models
 	public class Payment
 	{
 		[Key]
-		public Guid Id {get; set;} = Guid.NewGuid();
+		public Guid Id { get; set; } = Guid.NewGuid();
 
 		[Required]
 		public Guid StudentId { get; set; }

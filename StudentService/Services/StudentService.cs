@@ -22,7 +22,7 @@ namespace StudentService.Services
 		public async Task<IEnumerable<StudentDTO>> GetAllAsync()
 		{
 			var students = await _repository.GetAllAsync();
-			return _mapper.Map<StudentDTO>(students);
+			return _mapper.Map<IEnumerable<StudentDTO>>(students);
 		}
 
 		public async Task<StudentDTO> GetByIdAsync(Guid id)
@@ -42,6 +42,7 @@ namespace StudentService.Services
 			var student = _mapper.Map<Student>(studentDto);
 			await _repository.UpdateAsync(student);
 		}
+
 		public async Task DeleteAsync(Guid id) => await _repository.DeleteAsync(id);
 	}
 }
